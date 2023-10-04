@@ -1,4 +1,4 @@
-export const Filter = getNewFilter => {
+export const Filter = ({ getNewFilter }) => {
   return (
     <div className="filter">
       <label className="filter-label" htmlFor="filter">

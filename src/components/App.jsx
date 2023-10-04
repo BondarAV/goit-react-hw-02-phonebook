@@ -51,7 +51,9 @@ export class App extends Component {
     }));
   };
 
-  filterNames = (contacts, filter) => {
+  filterNames = () => {
+    const { contacts, filter } = this.state;
+
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
@@ -69,10 +71,7 @@ export class App extends Component {
         <Filter getNewFilter={this.handleFilter} />
 
         <ContactList
-          filteredNames={this.filterNames(
-            this.state.contacts,
-            this.state.filter
-          )}
+          filteredNames={this.filterNames()}
           deleteContact={this.deleteContact}
         />
       </div>
